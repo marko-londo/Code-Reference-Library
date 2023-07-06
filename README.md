@@ -25,18 +25,10 @@
   - [Seaborn](#seaborn)
   - [Chardet](#chardet)
   - [Calendar](#calendar)
-- [Python Functions](#functions)
-  - [Time](#time)
-  - [Date](#date)
-  - [Datetime](#datetime)
-  - [String](#string)
-  - [List](#list)
-  - [Tuple](#tuple)
-  - [Dict](#dict)
-  - [Set](#set)
-  - [List Comprehension](#list-comprehension)
-  - [Dictionary Comprehension](#dictionary-comprehension)
-  - [Tuple Comprehension](#tuple-comprehension)
+- [Useful Functions](#useful-functions)
+
+
+
 
 <br>
 <hr>
@@ -178,9 +170,8 @@ verbosely commented code snippets, and helpful examples.<br><br>
 <hr>
 <br>
 <h1 align="center">
-	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Functions.png?raw=true" alt="Python Functions">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Functions.png?raw=true" alt=" Functions">
 
-## Python Functions
-<br>This section offers a brief overview of common Python functions and their
-uses.<br><br>
-
+## Useful Functions
+<br>This section provides some useful functions for the purpose of
+data analysis and their uses.<br><br>
