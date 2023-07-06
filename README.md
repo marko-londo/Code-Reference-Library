@@ -80,7 +80,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
     ```
     from pathlib import Path
 
-    path = Path(r"C:\Users\(...)data.csv")
+    path = Path(r"C:\Users\(...)\data.csv")
     ```
   
 - ### Pandas
@@ -170,3 +170,17 @@ verbosely commented code snippets, and helpful examples.<br><br>
   ```
   import calendar
   ```
+  <br><br>
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
+<hr>
+<br>
+<h1 align="center">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Functions.png?raw=true" alt="Python Functions">
+
+## Python Functions
+<br>This section offers a brief overview of common Python functions and their
+uses.<br><br>
+
