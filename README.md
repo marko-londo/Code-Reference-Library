@@ -210,11 +210,11 @@ referencing.<br><br>
   Index of just the months, and a column for each individual shape with the number of
   times each shape was sighted as a value.
 
-  ***TLDR this function can be used to:*** 
+  ***TLDR this function was used to:*** 
   * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
     index in a new df.<br>
   ***AND***
-  * Extract str type value counts and set them as columns in that df.
+  * Extract str type value counts and set them as columns in that df.<br>
 
   ```python
   import pandas as pd
