@@ -212,7 +212,7 @@ referencing.<br><br>
 
   ***TLDR this function can be used to:*** 
   * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
-    index in a new df.
+    index in a new df.<br>
   ***AND***
   * Extract str type value counts and set them as columns in that df.
 
