@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="https://raw.githubusercontent.com/marko-londo/Code-Reference-Library/main/Images/header.jpg" alt="Code-Reference-Library">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Header.png?raw=true" alt="Code-Reference-Library">
 </h1>
 <h1 align="center">
 	<b>Code Reference Library</b>
