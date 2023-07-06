@@ -25,7 +25,7 @@
   - [Seaborn](#seaborn)
   - [Chardet](#chardet)
   - [Calendar](#calendar)
-- [Functions](#functions)
+- [Python Functions](#functions)
   - [Time](#time)
   - [Date](#date)
   - [Datetime](#datetime)
@@ -42,7 +42,7 @@
 <hr>
 <br>
 <h1 align="center">
-	<img src="https://github.com/marko-londo/IBM-ESPN-Case-Study/blob/main/Images/intro.png?raw=true" alt="Introduction">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/intro.png?raw=true" alt="Introduction">
 </h1>
 
 
