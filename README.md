@@ -466,8 +466,8 @@ referencing.<br><br>
   total number of students by race in that state, using the
   [race_plot_prep](#race_plot_prep) and [race_plotter](#race_plotter)
   functions. It first asks what school type and state the user would like to
-  plot, and if those values are valid, it then calls the [race_plot_prep](#race_plot_prep) and
-  [race_plotter](#race_plotter) functions to prepare the data for plotting.
+  plot, and if those values are valid, it then calls the functions to plot the
+  data in a bar chart.
   Else it displays a message that the values could not be found.
 
   ***TL;DR: this function was used/ serves as an example to:***
