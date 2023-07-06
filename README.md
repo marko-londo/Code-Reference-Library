@@ -114,9 +114,11 @@ concise description of each.<br><br>
     .pyplot is a function provided by the matplotlib module that offers
     easy access to various plot types, including line, bar, box, scatter,
     and more. It is generally aliased and imported as "plt"
+
     ```python
     import matplotlib.pyplot as plt
     ```
+
   - #### %matplotlib inline
     
     The %matplotlib inline command is a specific Jupyter Notebook magic
@@ -227,7 +229,9 @@ referencing.<br><br>
   * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
     index in a new df.<br>
   ***AND***
-  * Extract str type value counts and set them as columns in that df.<br>
+  * Extract str type value counts and set them as columns in that df.
+
+
 
   ```python
   import pandas as pd
@@ -342,8 +346,8 @@ referencing.<br><br>
   * Prepare a dataset for plotting by transforming and consolidating multiple columns into a new DataFrame.
   ***AND***
   * Returning the newly created columns and their corresponding data as a series.
-
-
+  
+  
   ```python
   def race_plot_prep(
       school_type, state, value_vars=["AM", "AS", "BL", "HI", "HP", "TR", "WH"]
@@ -396,7 +400,6 @@ referencing.<br><br>
 
   ***TL;DR: this function was used/ serves as an example to:***
   * Create a bar chart using data from another function
-
 
   ```python
   def race_plotter(race_totals, state):
@@ -469,8 +472,8 @@ referencing.<br><br>
   * Ask for a user input
   ***AND***
   * Call another function based on the input, or display an error message (using an if statement).
-
-
+  
+  
   ```python
   def race_plotter(race_totals, state):
     """
