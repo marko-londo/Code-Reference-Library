@@ -343,6 +343,7 @@ referencing.<br><br>
   ***AND***
   * Returning the newly created columns and their corresponding data as a series.
 
+
   ```python
   def race_plot_prep(
       school_type, state, value_vars=["AM", "AS", "BL", "HI", "HP", "TR", "WH"]
@@ -395,6 +396,7 @@ referencing.<br><br>
 
   ***TL;DR: this function was used/ serves as an example to:***
   * Create a bar chart using data from another function
+
 
   ```python
   def race_plotter(race_totals, state):
@@ -467,6 +469,7 @@ referencing.<br><br>
   * Ask for a user input
   ***AND***
   * Call another function based on the input, or display an error message (using an if statement).
+
 
   ```python
   def race_plotter(race_totals, state):
