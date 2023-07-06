@@ -248,7 +248,7 @@ referencing.<br><br>
 
       # Iterate over each month
       for month in months:
-          # Filter the UFO data for the current month
+          # Organize the data from the date/time column by month and add it to a series called  month_data
           month_data = ufo_filtered[ufo_filtered["Date / Time"].dt.month == month]
 
           # Create a dataframe for the filtered data and store it in the data_by_month_df dictionary
@@ -262,7 +262,7 @@ referencing.<br><br>
               .reset_index(name="Count")
           )
 
-      # Get the dataframe for the specified month index and sort it by "Date / Time" column in ascending order
+      # Get the dataframe for the specified month index parameter and sort it by "Date / Time" column in ascending (chronological) order
       month = data_by_month_df[month_index].sort_values(by="Date / Time", ascending=True)
 
       # Count the number of occurrences of each shape in the specified month and create a dataframe
@@ -279,11 +279,14 @@ referencing.<br><br>
       )
       month_df = pd.DataFrame(shape_counts).T
 
-      # Set the column names of month_df to be the first row of the dataframe and remove the row
+      # Set the column names of the `month_df` DataFrame to the values in the first row
       month_df.columns = month_df.iloc[0]
+
+      # Drop the column named "Shape" from the `month_df` DataFrame
       month_df = month_df.drop("Shape")
 
-      # Get the name of the specified month
+
+      # Get the name of the specified month index, using the calendar module
       month_number = month_index
       month_name = calendar.month_name[month_number]
 
