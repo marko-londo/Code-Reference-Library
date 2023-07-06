@@ -248,13 +248,16 @@ referencing.<br><br>
 
       # Iterate over each month
       for month in months:
-          # Organize the data from the date/time column by month and add it to a series called  month_data
+          # Organize the data from the date/time column by month and add it to a 
+          # series called  month_data
           month_data = ufo_filtered[ufo_filtered["Date / Time"].dt.month == month]
 
-          # Create a dataframe for the filtered data and store it in the data_by_month_df dictionary
+          # Create a dataframe for the filtered data and store it in the 
+          # data_by_month_df dictionary
           data_by_month_df[month] = pd.DataFrame(month_data)
 
-          # Create a dataframe of shape counts for the filtered data and store it in the shapes_by_month_df dictionary
+          # Create a dataframe of shape counts for the filtered data and store it 
+          # in the shapes_by_month_df dictionary
           shapes_by_month_df[month] = pd.DataFrame(
               month_data["Shape"]
               .value_counts()
@@ -262,18 +265,22 @@ referencing.<br><br>
               .reset_index(name="Count")
           )
 
-      # Get the dataframe for the specified month index parameter and sort it by "Date / Time" column in ascending (chronological) order
+      # Get the dataframe for the specified month index parameter and sort it by 
+      # "Date / Time" column in ascending (chronological) order
       month = data_by_month_df[month_index].sort_values(by="Date / Time", ascending=True)
 
-      # Count the number of occurrences of each shape in the specified month and create a dataframe
+      # Count the number of occurrences of each shape in the specified month and create 
+      # a dataframe
       month_shapes = (
           month["Shape"].value_counts().rename_axis("Shape").reset_index(name="Count")
       )
 
-      # Add a "Month" column to the month_shapes dataframe with values ranging from 0 to the number of unique shapes
+      # Add a "Month" column to the month_shapes dataframe with values ranging from 0 
+      # to the number of unique shapes
       month_shapes["Month"] = list(range(len(month_shapes)))
 
-      # Count the number of occurrences of each shape in the specified month and create a transposed dataframe
+      # Count the number of occurrences of each shape in the specified month and create 
+      # a transposed dataframe
       shape_counts = (
           month["Shape"].value_counts().rename_axis("Shape").reset_index(name="Count")
       )
