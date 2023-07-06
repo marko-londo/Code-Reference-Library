@@ -31,6 +31,7 @@
   - [race_plot_prep](#race_plot_prep)
   - [race_plotter](#race_plotter)
   - [plot_bot](#plot_bot)
+  - [clean_print](#clean_print)
 
 
 
@@ -540,6 +541,32 @@ referencing.<br><br>
 <br>
 <br>
 
+- ### clean_print
+  
+  This is a helpful function for printing dictionaries of dictionaries in a way that is easy
+  to read.
+
+  Code:
+  
+  ```python
+  def clean_print(dictionary):
+      # Iterate over the key-value pairs in the dictionary
+      for key, value in dictionary.items():
+          # Print the key
+          print(f"{key}:")
+          # Iterate over the key-value pairs in the inner dictionary
+          for inner_key, inner_value in value.items():
+              # Print the inner key and value with indentation
+              print(f"    {inner_key}: {inner_value}")
+          # Print a new line after each inner dictionary
+          print()
+
+    ```
+    
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
 
 
   
