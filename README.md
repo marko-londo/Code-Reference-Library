@@ -231,8 +231,8 @@ referencing.<br><br>
     index in a new df.<br>
   ***AND***
   * Extract str type value counts and set them as columns in that df.
-
-
+  
+<br>
 
   ```python
   import pandas as pd
@@ -320,13 +320,13 @@ referencing.<br><br>
 
       # Return the final month_df dataframe
       return month_df
-
-    ```
+```
     
 
 [Return to Top](#table-of-contents)
 <br>
 <br>
+
 - ### race_plot_prep
   This function was used to prepare a df of US school data for plotting the
   total number of students by race, in a given school type and state. I wanted
@@ -348,6 +348,7 @@ referencing.<br><br>
   ***AND***
   * Returning the newly created columns and their corresponding data as a series.
   
+  <br>
   
   ```python
   def race_plot_prep(
@@ -402,6 +403,8 @@ referencing.<br><br>
   ***TL;DR: this function was used/ serves as an example to:***
   * Create a bar chart using data from another function
 
+<br>
+
   ```python
   def race_plotter(race_totals, state):
       """
@@ -454,7 +457,7 @@ referencing.<br><br>
 
       # Display the plot
       plt.show()
-      ```
+  ```
     
 
 [Return to Top](#table-of-contents)
@@ -475,7 +478,8 @@ referencing.<br><br>
   ***AND***
   * Call another function based on the input, or display an error message (using an if statement).
   
-  
+  <br>
+
   ```python
   def race_plotter(race_totals, state):
     """
