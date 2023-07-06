@@ -191,6 +191,8 @@ referencing.<br><br>
   
   This is a helpful function for quickly determining the index of a column in a
   dataframe.
+
+  Code:
   
   ```python
   import pandas as pd
@@ -217,6 +219,7 @@ referencing.<br><br>
 [Return to Top](#table-of-contents)
 <br>
 <br>
+
 - ### shapes_by_month
   
   This function was used in a previous project analyzing UFO sightings data to determine the number of
@@ -232,7 +235,7 @@ referencing.<br><br>
   ***AND***
   * Extract str type value counts and set them as columns in that df.
   
-<br>
+  Code:
 
   ```python
   import pandas as pd
@@ -320,7 +323,7 @@ referencing.<br><br>
 
       # Return the final month_df dataframe
       return month_df
-```
+    ```
     
 
 [Return to Top](#table-of-contents)
@@ -348,7 +351,7 @@ referencing.<br><br>
   ***AND***
   * Returning the newly created columns and their corresponding data as a series.
   
-  <br>
+  Code:
   
   ```python
   def race_plot_prep(
@@ -390,12 +393,13 @@ referencing.<br><br>
 
       # Return the sorted race totals
       return race_totals_sorted
-      ```
+    ```
     
 
 [Return to Top](#table-of-contents)
 <br>
 <br>
+
 - ### race_plotter
   This function was used to take the returned series of race totals from the
   [race_plot_prep](#race_plot_prep) function and plot them as a bar chart.
@@ -403,7 +407,7 @@ referencing.<br><br>
   ***TL;DR: this function was used/ serves as an example to:***
   * Create a bar chart using data from another function
 
-<br>
+  Code:
 
   ```python
   def race_plotter(race_totals, state):
@@ -457,7 +461,7 @@ referencing.<br><br>
 
       # Display the plot
       plt.show()
-  ```
+    ```
     
 
 [Return to Top](#table-of-contents)
@@ -478,7 +482,7 @@ referencing.<br><br>
   ***AND***
   * Call another function based on the input, or display an error message (using an if statement).
   
-  <br>
+  Code:
 
   ```python
   def race_plotter(race_totals, state):
