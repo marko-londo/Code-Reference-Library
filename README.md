@@ -29,6 +29,7 @@
   - [get_col_idx](#get_col_idx)
   - [shapes_by_month](#shapes_by_month)
   - [race_plot_prep](#race_plot_prep)
+  - [race_plotter](#race_plotter)
 
 
 
@@ -382,5 +383,152 @@ referencing.<br><br>
 
       # Return the sorted race totals
       return race_totals_sorted
+      ```
+    
 
+[Return to Top](#table-of-contents)
+<br>
+<br>
+- ### race_plotter
+  This function was used to take the returned series of race totals from the
+  [race_plot_prep](#race_plot_prep) function and plot them as a bar chart.
+
+  ***TL;DR: this function was used/ serves as an example to:***
+  * Create a bar chart using data from another function
+
+  ```python
+  def race_plotter(race_totals, state):
+      """
+      Plots the number of students by race in a given state.
+
+      Parameters
+      ----------
+      race_totals (series): The race totals
+      state (str): The state of the school
+      """
+
+      # Set the size of the plot
+      plt.figure(figsize=(17, 9))
+
+      # Define the colors for the bar chart
+      colors = [
+          "#3C1853",
+          "#3C1F67",
+          "#37267B",
+          "#2E308E",
+          "#364EA1",
+          "#4188A8",
+          "#4DAFA0",
+          "#58B67C",
+          "#6CBD64",
+      ]
+
+      # Create the bar chart
+      ax = sns.barplot(x=race_totals.index, y=race_totals.values, palette=colors)
+
+      # Set the x-axis label
+      plt.xlabel("\nRace", fontsize=14)
+
+      # Set the y-axis label
+      plt.ylabel("Number of Students\n", fontsize=14)
+
+      # Set the title of the plot
+      plt.title(f"Number of Students by Race [{state}]\n", fontsize=18)
+
+      # Set the y-axis tick labels to be comma-separated integers
+      y_labels = ax.get_yticks().tolist()
+      ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f"{int(x):,}"))
+
+      # Rotate the x-axis tick labels by 45 degrees
+      ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+
+      # Add labels to the bars with the values of each bar
+      for i in ax.containers:
+          ax.bar_label(i, fmt="%d")
+
+      # Display the plot
+      plt.show()
+  ```
+    
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
+- ### plot_bot
+  This function takes a user input of a school type and state, and plots the
+  total number of students by race in that state, using the
+  [race_plot_prep](#race_plot_prep) and [race_plotter](#race_plotter)
+  functions. It first asks what school type and state the user would like to
+  plot, and if those values are valid, it then calls the [race_plot_prep](#race_plot_prep) and
+  [race_plotter](#race_plotter) functions to prepare the data for plotting.
+  Else it displays a message that the values could not be found.
+
+  ***TL;DR: this function was used/ serves as an example to:***
+  * Ask for a user input
+  ***AND***
+  * Call another function based on the input, or display an error message (using an if statement).
+
+  ```python
+  def race_plotter(race_totals, state):
+    """
+    Plots the number of students by race in a given state.
+
+    Parameters
+    ----------
+    race_totals (series): The race totals
+    state (str): The state of the school
+    """
+
+    # Set the size of the plot
+    plt.figure(figsize=(17, 9))
+
+    # Define the colors for the bar chart
+    colors = [
+        "#3C1853",
+        "#3C1F67",
+        "#37267B",
+        "#2E308E",
+        "#364EA1",
+        "#4188A8",
+        "#4DAFA0",
+        "#58B67C",
+        "#6CBD64",
+    ]
+
+    # Create the bar chart
+    ax = sns.barplot(x=race_totals.index, y=race_totals.values, palette=colors)
+
+    # Set the x-axis label
+    plt.xlabel("\nRace", fontsize=14)
+
+    # Set the y-axis label
+    plt.ylabel("Number of Students\n", fontsize=14)
+
+    # Set the title of the plot
+    plt.title(f"Number of Students by Race [{state}]\n", fontsize=18)
+
+    # Set the y-axis tick labels to be comma-separated integers
+    y_labels = ax.get_yticks().tolist()
+    ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f"{int(x):,}"))
+
+    # Rotate the x-axis tick labels by 45 degrees
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+
+    # Add labels to the bars with the values of each bar
+    for i in ax.containers:
+        ax.bar_label(i, fmt="%d")
+
+    # Display the plot
+    plt.show()
+    ```
+    
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
+
+
+
+  
+  
     
