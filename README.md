@@ -25,8 +25,9 @@
   - [Seaborn](#seaborn)
   - [Chardet](#chardet)
   - [Calendar](#calendar)
-- [Useful Functions](#useful-functions)
+- [Function Documentation](#function-documentation)
   - [get_col_idx](#get-col-idx)
+  - [shapes_by_month](#shapes-by-month)
 
 
 
@@ -70,7 +71,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
     represents a file system path as an object, enabling straightforward
     manipulation and operations on paths in a cross-platform manner.
 
-    ```
+    ```python
     from pathlib import Path
 
     path = Path(r"C:\Users\(...)\data.csv")
@@ -88,7 +89,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
   ecosystem, making it a popular choice for data analysis tasks. It is
   generally aliased and imported as "pd"
   
-  ```
+  ```python
   import pandas as pd
   ```
 
@@ -107,7 +108,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
     .pyplot is a function provided by the matplotlib module that offers
     easy access to various plot types, including line, bar, box, scatter,
     and more. It is generally aliased and imported as "plt"
-    ```
+    ```python
     import matplotlib.pyplot as plt
     ```
   - #### %matplotlib inline
@@ -118,7 +119,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
     will be shown directly in the output cell of the notebook, allowing for a
     seamless integration of code and visualizations in the notebook
     environment.
-    ```
+    ```python
     %matplotlib inline
     ```
 - ### Seaborn
@@ -128,7 +129,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
   provides additional features like color control and categorical data
   visualization. It is generally aliased and imported as "sns"
   
-  ```
+  ```python
   import seaborn as sns
   ```
 - ### Chardet
@@ -136,7 +137,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
   Chardet is a Python library for automatic character encoding detection. It
   helps determine the encoding of text or files when not explicitly specified.
   
-  ```
+  ```python
   import chardet
 
   df = pd.read_csv(path, encoding="Windows-1252") 
@@ -160,7 +161,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
   The calendar module is useful for tasks that involve date and time
   calculations, scheduling, or displaying dates in a structured manner.
 
-  ```
+  ```python
   import calendar
   ```
 
@@ -173,12 +174,16 @@ verbosely commented code snippets, and helpful examples.<br><br>
 <h1 align="center">
 	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Functions.png?raw=true" alt=" Functions">
 
-## Useful Functions
-<br>This section provides some useful functions for the purpose of
-data analysis and their uses.<br><br>
+## Function Documentation
+<br>This section provides documentation of functions I've created for
+referencing.<br><br>
 
 - ### get_col_idx
-  ```
+  
+  This is a helpful function for quickly determining the index of a column in a
+  dataframe.
+  
+  ```python
   def get_col_idx(df):
     """
     This function takes in a dataframe and returns the index of each column.
@@ -195,4 +200,97 @@ data analysis and their uses.<br><br>
     for i, column in enumerate(df.columns):
         # Print the index of each column
         print(f"Index of column '{column}': {i}")
+    ```
+- ### shapes_by_month
+  
+  This function was used in a previous project to determine the number of UFO
+  shape sightings by month. I had a df with a column called "Date / Time" and
+  another called  "Shape". The "Date / Time" column contained dates and times (YYYY-MM-DD HH:MM:SS). The "Shape" column contained different "Shape" values for
+  each sighting (Cone, Round, Light, etc.). I wanted to create a new df with an
+  Index of just the months, and a column for each individual shape with the number of
+  times each shape was sighted as a value.
+
+  ***TLDR this function can be used to:*** 
+  * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
+    index in a new df.
+  ***AND***
+  * Extract str type value counts and set them as columns in that df.
+
+  ```python
+  import pandas as pd
+  import calendar
+
+  def shapes_by_month(month_index):
+      """
+      Takes in month index and returns a df of shape counts by month.
+
+      Parameters
+      ----------
+      month_index : int
+          Month index of interest.
+
+      Returns
+      -------
+      df : pd.DataFrame
+          Dataframe of shape counts by month.
+
+      Notes
+      -----
+      Month index starts at 1.
+      """
+
+      # Create a list of months from 1 to 12
+      months = range(1, 13)
+
+      # Create empty dictionaries to store dataframes
+      data_by_month_df = {}
+      shapes_by_month_df = {}
+
+      # Iterate over each month
+      for month in months:
+          # Filter the UFO data for the current month
+          month_data = ufo_filtered[ufo_filtered["Date / Time"].dt.month == month]
+
+          # Create a dataframe for the filtered data and store it in the data_by_month_df dictionary
+          data_by_month_df[month] = pd.DataFrame(month_data)
+
+          # Create a dataframe of shape counts for the filtered data and store it in the shapes_by_month_df dictionary
+          shapes_by_month_df[month] = pd.DataFrame(
+              month_data["Shape"]
+              .value_counts()
+              .rename_axis("Shape")
+              .reset_index(name="Count")
+          )
+
+      # Get the dataframe for the specified month index and sort it by "Date / Time" column in ascending order
+      month = data_by_month_df[month_index].sort_values(by="Date / Time", ascending=True)
+
+      # Count the number of occurrences of each shape in the specified month and create a dataframe
+      month_shapes = (
+          month["Shape"].value_counts().rename_axis("Shape").reset_index(name="Count")
+      )
+
+      # Add a "Month" column to the month_shapes dataframe with values ranging from 0 to the number of unique shapes
+      month_shapes["Month"] = list(range(len(month_shapes)))
+
+      # Count the number of occurrences of each shape in the specified month and create a transposed dataframe
+      shape_counts = (
+          month["Shape"].value_counts().rename_axis("Shape").reset_index(name="Count")
+      )
+      month_df = pd.DataFrame(shape_counts).T
+
+      # Set the column names of month_df to be the first row of the dataframe and remove the row
+      month_df.columns = month_df.iloc[0]
+      month_df = month_df.drop("Shape")
+
+      # Get the name of the specified month
+      month_number = month_index
+      month_name = calendar.month_name[month_number]
+
+      # Set the index of month_df to be the month name
+      month_df.index = pd.to_datetime([f"2000-{month_number:02d}-01"]).strftime("%B")
+
+      # Return the final month_df dataframe
+      return month_df
+
     ```
