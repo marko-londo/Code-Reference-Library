@@ -30,6 +30,7 @@
   - [shapes_by_month](#shapes_by_month)
   - [race_plot_prep](#race_plot_prep)
   - [race_plotter](#race_plotter)
+  - [plot_bot](#plot_bot)
 
 
 
