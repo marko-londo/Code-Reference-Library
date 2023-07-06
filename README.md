@@ -227,12 +227,11 @@ referencing.<br><br>
   another called  "Shape". The "Date / Time" column contained dates and times (YYYY-MM-DD HH:MM:SS). The "Shape" column contained different "Shape" values for
   each sighting (Cone, Round, Light, etc.). I wanted to create a new df with an
   Index of just the months in str date/time format, and a column for each individual shape with the number of
-  times each shape was sighted as a value.
+  times each shape was sighted as a value
+  
+  ***TL;DR: this function was used to:***
 
-  ***TL;DR: this function was used/ serves as an example to:*** 
-  * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
-    index in a new df.<br>
-  ***AND***
+  * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an index in a new df.
   * Extract str type value counts and set them as columns in that df.
   
   Code:
@@ -346,10 +345,9 @@ referencing.<br><br>
   each race, sorting the race totals in ascending order, and returning the
   series of race totals.
 
-  ***TL;DR: this function was used/ serves as an example to:***
+  ***TL;DR: this function was used to:***
   * Prepare a dataset for plotting by transforming and consolidating multiple columns into a new DataFrame.
-  ***AND***
-  * Returning the newly created columns and their corresponding data as a series.
+  * Return the newly created columns and their corresponding data as a series.
   
   Code:
   
@@ -404,7 +402,7 @@ referencing.<br><br>
   This function was used to take the returned series of race totals from the
   [race_plot_prep](#race_plot_prep) function and plot them as a bar chart.
 
-  ***TL;DR: this function was used/ serves as an example to:***
+  ***TL;DR: this function was used to:***
   * Create a bar chart using data from another function
 
   Code:
@@ -477,9 +475,8 @@ referencing.<br><br>
   data in a bar chart.
   Else it displays a message that the values could not be found.
 
-  ***TL;DR: this function was used/ serves as an example to:***
+  ***TL;DR: this function was used to:***
   * Ask for a user input
-  ***AND***
   * Call another function based on the input, or display an error message (using an if statement).
   
   Code:
