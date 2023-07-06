@@ -453,12 +453,13 @@ referencing.<br><br>
 
       # Display the plot
       plt.show()
-  ```
+      ```
     
 
 [Return to Top](#table-of-contents)
 <br>
 <br>
+
 - ### plot_bot
   This function takes a user input of a school type and state, and plots the
   total number of students by race in that state, using the
