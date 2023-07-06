@@ -26,8 +26,9 @@
   - [Chardet](#chardet)
   - [Calendar](#calendar)
 - [Function Documentation](#function-documentation)
-  - [get_col_idx](#get-col-idx)
-  - [shapes_by_month](#shapes-by-month)
+  - [get_col_idx](#get_col_idx)
+  - [shapes_by_month](#shapes_by_month)
+  - [race_plot_prep](#race_plot_prep)
 
 
 
@@ -207,6 +208,11 @@ referencing.<br><br>
         # Print the index of each column
         print(f"Index of column '{column}': {i}")
     ```
+    
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
 - ### shapes_by_month
   
   This function was used in a previous project analyzing UFO sightings data to determine the number of
@@ -216,7 +222,7 @@ referencing.<br><br>
   Index of just the months in str date/time format, and a column for each individual shape with the number of
   times each shape was sighted as a value.
 
-  ***TLDR this function was used/ serves as an example to:*** 
+  ***TL;DR: this function was used/ serves as an example to:*** 
   * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
     index in a new df.<br>
   ***AND***
@@ -310,3 +316,71 @@ referencing.<br><br>
       return month_df
 
     ```
+    
+
+[Return to Top](#table-of-contents)
+<br>
+<br>
+- ### race_plot_prep
+  This function was used to prepare a df of US school data for plotting the
+  total number of students by race, in a given school type and state. I wanted
+  to create a chart that would take a user input of a school type and state,
+  and produce a bar chart showing the specified state's and school type's
+  total number of students by race. The df contained the following columns:
+  "School Type", "State", "AM", "AS", "BL", "HI", "HP", "TR", and "WH". To
+  analyze the data more efficiently, I first needed to create a new df that
+  only included the specified school type and state. Then, I needed to include
+  an additional column called "Race". By using the melt function, this new df
+  would display each racial group and its corresponding value for each school
+  in the dataset by expanding the rows to accomadate for each race. Finally, I
+  needed to group the melted df by race and calculate the sum of values for
+  each race, sorting the race totals in ascending order, and returning the
+  series of race totals.
+
+  ***TL;DR: this function was used/ serves as an example to:***
+  * Prepare a dataset for plotting by transforming and consolidating multiple columns into a new DataFrame.
+  ***AND***
+  * Returning the newly created columns and their corresponding data as a series.
+
+  ```python
+  def race_plot_prep(
+      school_type, state, value_vars=["AM", "AS", "BL", "HI", "HP", "TR", "WH"]
+      ):
+      """
+      Prepares the data for plotting the number of students by race in a given
+      state.
+
+      Parameters
+      ----------
+          school_type (str): The type of school (regular, special, etc.)
+          state (str): The state of the school
+          value_vars (list): The variables to be plotted.
+
+      Returns
+      -------
+          df (pd.DataFrame): The prepared data.
+      """
+
+      # Filter the data to include only the specified school type
+      school_type_filtered = all_schools.loc[
+          all_schools["School Type"].isin([school_type])
+      ]
+
+      # Filter the data to include only the specified state
+      state_filtered = school_type_filtered.loc[
+          school_type_filtered["State"].isin([state])
+      ]
+
+      # Melt the filtered data to transform it from wide to long format
+      race_melted = pd.melt(state_filtered, value_vars=value_vars)
+
+      # Group the melted data by race variable and calculate the sum of values
+      race_totals = race_melted.groupby("variable")["value"].sum()
+
+      # Sort the race totals in ascending order
+      race_totals_sorted = race_totals.sort_values(ascending=True)
+
+      # Return the sorted race totals
+      return race_totals_sorted
+
+    
