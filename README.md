@@ -43,8 +43,10 @@
 ## Introduction 
 <br>This repository serves as an information library for data plotting and
 analysis in Python. It contains a collection of useful functions and serves as
-a reference for coding topics. Additionally, it showcases visually appealing
-plots to inspire and guide data visualization projects. This
+a reference for different coding topics. Additionally, it showcases visually appealing
+plots to inspire and guide data visualization projects. The idea behind it was
+to create a repo that is easy to navigate, to find specific use cases or
+methods of aquiring results in a simplified way based on my own trial and error. This
 repository will be regularly updated with new functions, interesting plots,
 verbosely commented code snippets, and helpful examples.<br><br>
 
@@ -57,7 +59,9 @@ verbosely commented code snippets, and helpful examples.<br><br>
 	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Imports.png?raw=true" alt="Imports">
 
 ## Imports
-<br>This section offers a brief overview of common imports and their uses.<br><br>
+<br>This section offers a brief overview of common imports and their uses. This
+will help to find the specific library or module needed for a given task with a
+concise description of each.<br><br>
 
 - ### Pathlib
 
@@ -184,6 +188,8 @@ referencing.<br><br>
   dataframe.
   
   ```python
+  import pandas as pd
+
   def get_col_idx(df):
     """
     This function takes in a dataframe and returns the index of each column.
@@ -203,14 +209,14 @@ referencing.<br><br>
     ```
 - ### shapes_by_month
   
-  This function was used in a previous project to determine the number of UFO
-  shape sightings by month. I had a df with a column called "Date / Time" and
+  This function was used in a previous project analyzing UFO sightings data to determine the number of
+  sightings by shape, by month. I had a df with one column called "Date / Time" and
   another called  "Shape". The "Date / Time" column contained dates and times (YYYY-MM-DD HH:MM:SS). The "Shape" column contained different "Shape" values for
   each sighting (Cone, Round, Light, etc.). I wanted to create a new df with an
-  Index of just the months, and a column for each individual shape with the number of
+  Index of just the months in str date/time format, and a column for each individual shape with the number of
   times each shape was sighted as a value.
 
-  ***TLDR this function was used to:*** 
+  ***TLDR this function was used/ serves as an example to:*** 
   * Get the month from a series of YYYY-MM-DD HH:MM:SS values and set it as an
     index in a new df.<br>
   ***AND***
