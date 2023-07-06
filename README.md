@@ -42,7 +42,7 @@
 <hr>
 <br>
 <h1 align="center">
-	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/intro.png?raw=true" alt="Introduction">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/introduction.png?raw=true" alt="Introduction">
 </h1>
 
 
@@ -60,7 +60,27 @@ verbosely commented code snippets, and helpful examples.<br><br>
 <hr>
 <br>
 <h1 align="center">
-	<img src="https://github.com/marko-londo/IBM-ESPN-Case-Study/blob/main/Images/nlp.jpg?raw=true" alt="Imports">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/Imports.png?raw=true" alt="Imports">
 
 ## Imports
-<br>This section offers a brief overview of common imports and their uses.
+<br>This section offers a brief overview of common imports and their uses.<br><br>
+
+- ### Pathlib
+
+    Pathlib is a module that offers a simpler way to work with file systems and
+    paths by representing them as objects, allowing for easy manipulation and
+    platform-independent operations.
+
+  - #### Path
+   
+      Path refers to the main class provided by the pathlib module. It
+      represents a file system path as an object, enabling straightforward
+      manipulation and operations on paths in a cross-platform manner.
+    
+- ### Pandas
+
+    Pandas is a powerful open-source Python library widely used for data manipulation and analysis. It provides data structures and functions to efficiently work with structured data, such as tables and time series, making it an essential tool for data scientists and analysts. Pandas allows for easy data cleaning, transformation, aggregation, and exploration, and offers various methods for handling missing data and dealing with diverse data formats. It also integrates well with other libraries in the Python ecosystem, making it a popular choice for data analysis tasks.
+
+  ####
+    
+    
