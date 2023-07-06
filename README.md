@@ -6,7 +6,7 @@
 <br>
 </h1>
 <h2 align="center">
-    <em>Code snippets and descriptions with detailed commenting from some of my data analysis, serving as a reference for various coding topics.</em>
+    <em>Code snippets and descriptions with detailed commenting from some of my .ipynbs, serving as a reference for various coding topics.</em>
 </h2>
 <br>
 <br>
@@ -26,6 +26,7 @@
   - [Chardet](#chardet)
   - [Calendar](#calendar)
 - [Useful Functions](#useful-functions)
+  - [get_col_idx](#get-col-idx)
 
 
 
@@ -162,7 +163,7 @@ verbosely commented code snippets, and helpful examples.<br><br>
   ```
   import calendar
   ```
-  <br><br>
+
 
 [Return to Top](#table-of-contents)
 <br>
@@ -175,3 +176,23 @@ verbosely commented code snippets, and helpful examples.<br><br>
 ## Useful Functions
 <br>This section provides some useful functions for the purpose of
 data analysis and their uses.<br><br>
+
+- ### get_col_idx
+  ```
+  def get_col_idx(df):
+    """
+    This function takes in a dataframe and returns the index of each column.
+
+    Parameters:
+        df (pandas.DataFrame): The input dataframe.
+
+    Returns:
+        None
+
+    """
+
+    # Iterate over the columns of the dataframe
+    for i, column in enumerate(df.columns):
+        # Print the index of each column
+        print(f"Index of column '{column}': {i}")
+    ```
