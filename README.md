@@ -32,6 +32,10 @@
   - [race_plotter](#race_plotter)
   - [plot_bot](#plot_bot)
   - [clean_print](#clean_print)
+- [Data Cleaning](#data-cleaning)
+- [Visualizations](#visualizations)
+
+
 
 
 
@@ -567,8 +571,27 @@ referencing.<br><br>
 [Return to Top](#table-of-contents)
 <br>
 <br>
+<hr>
+<br>
+<h1 align="center">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/cleaning.png?raw=true" alt="Data Cleaning">
 
+## Data Cleaning
+<br>This section will show examples of cleaning and organization of data in
+Python using pandas.
+    
 
-  
+[Return to Top](#table-of-contents)
+<br>
+<br>
+<hr>
+<br>
+<h1 align="center">
+	<img src="https://github.com/marko-londo/Code-Reference-Library/blob/main/Images/visualizations.png?raw=true" alt="Data Cleaning">
+
+## Visualizations
+<br>This section will show examples of visualizations in Python using
+matplotlib and seaborn.
+
   
     
